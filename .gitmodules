@@ -1,0 +1,3 @@
+[submodule "vsub/libs/bootstrap/static"]
+	path = vsub/libs/bootstrap/static
+	url = git://github.com/twitter/bootstrap.git

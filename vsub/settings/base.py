@@ -5,7 +5,6 @@
 
 import os
 import sys
-import dj_database_url
 
 ## Path configuration
 # Absolute path to our project directory.
@@ -42,14 +41,6 @@ ADMINS = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
-
-
-## Database configuration
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    # Point to a local sqlite3 instance by default.
-    'default': dj_database_url.config(default='sqlite3:///db.sqlite')
-}
 
 
 ## Timezone and localization configuration

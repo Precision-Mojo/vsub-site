@@ -3,3 +3,4 @@ distribute==0.6.28
 dj-database-url==0.2.1
 pyflakes==0.5.0
 wsgiref==0.1.2
+django-pipeline==1.2.17

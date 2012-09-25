@@ -1,0 +1,2 @@
+heroku-postgresql:dev
+memcache:5mb

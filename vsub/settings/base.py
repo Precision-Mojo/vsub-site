@@ -17,6 +17,9 @@ project_path = lambda path: os.path.normpath(os.path.join(PROJECT_ROOT, path))
 # Absolute path to our site directory.
 SITE_ROOT = os.path.dirname(PROJECT_ROOT)
 
+# Create an absolute path from a path relative to the site root.
+site_path = lambda path: os.path.normpath(os.path.join(SITE_ROOT, path))
+
 # Name of the site.
 SITE_NAME = os.path.basename(PROJECT_ROOT)
 
@@ -73,21 +76,25 @@ MEDIA_URL = '/media/'
 
 ## Static files configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = project_path('static/')
+# NOTE: We place this path at the our *site* root, not the project root. This
+# allows us to run collectstatic during development without worrying about
+# overwriting static files in app-relative static/ directories.
+STATIC_ROOT = site_path('static/')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-dirs
-STATICFILES_DIRS = (
-    project_path('assets/'),
-)
+STATICFILES_DIRS = ()
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-storage
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 
 ## Secret key configuration
@@ -168,6 +175,13 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/
     'django.contrib.admindocs',
+
+    # Third-party apps
+    'pipeline',
+
+    # Project libraries
+    '%s' % SITE_NAME,
+    'libs.bootstrap',
 )
 
 
@@ -191,3 +205,44 @@ LOGGING = {
         },
     }
 }
+
+
+## django-pipeline configuration
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html
+PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'
+
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#specifying-files
+PIPELINE_CSS = {
+    'standard': {
+        'source_filenames': (
+            'less/bootstrap.less',
+        ),
+        'output_filename': 'css/s.min.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    },
+}
+
+PIPELINE_JS = {
+    'standard': {
+        'source_filenames': (
+            'js/bootstrap-alert.js',
+            'js/bootstrap-button.js',
+            'js/bootstrap-carousel.js',
+            'js/bootstrap-collapse.js',
+            'js/bootstrap-dropdown.js',
+            'js/bootstrap-modal.js',
+            'js/bootstrap-popover.js',
+            'js/bootstrap-scrollspy.js',
+            'js/bootstrap-tab.js',
+            'js/bootstrap-tooltip.js',
+            'js/bootstrap-transition.js',
+            'js/bootstrap-typeahead.js',
+        ),
+        'output_filename': 'js/s.min.js',
+    }
+}
+
+
+PIPELINE_LESS_BINARY = 'lessc'

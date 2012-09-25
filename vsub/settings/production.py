@@ -46,3 +46,16 @@ CACHES = memcacheify()
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Use the value set in the Heroku configuration.
 SECRET_KEY = os.environ.get('SECRET_KEY', SECRET_KEY)
+
+
+## django-pipeline configuration
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-css-compressor
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CssminCompressor'
+
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-js-compressor
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+
+# See: http://django-pipeline.readthedocs.org/en/latest/compilers.html#compilers
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.less.LessCompiler',
+)

@@ -244,5 +244,6 @@ PIPELINE_JS = {
     }
 }
 
-
-PIPELINE_LESS_BINARY = 'lessc'
+# TODO: Strip off the /usr/bin/env portion of the value provided by
+# django-pipeline if env isn't on the path.
+#PIPELINE_LESS_BINARY = 'lessc'

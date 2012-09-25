@@ -1,3 +1,12 @@
+# Just in case someone isn't using virtualenvwrapper.
 venv
+
+# Python bytecode.
 *.pyc
+
+# Development database.
 db.sqlite
+
+# Ignore only the top-level static/ directory, it contains collected static
+# files.
+/static/

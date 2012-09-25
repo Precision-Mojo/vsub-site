@@ -215,7 +215,10 @@ PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'
 PIPELINE_CSS = {
     'standard': {
         'source_filenames': (
-            'less/bootstrap.less',
+            # TODO: Using less requires that node and lessc are set up on the
+            # server.
+            #'less/bootstrap.less',
+            'css/bootstrap.css',
         ),
         'output_filename': 'css/s.min.css',
         'extra_context': {

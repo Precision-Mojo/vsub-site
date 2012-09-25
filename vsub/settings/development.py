@@ -19,9 +19,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ## Database configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASE = {
+DATABASES = {
     # Point to a local sqlite3 instance by default.
-    'default': dj_database_url.config(default='sqlite3:///%s'
+    'default': dj_database_url.config(default='sqlite:///%s'
         % project_path('db.sqlite'))
 }
 

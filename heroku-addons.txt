@@ -1,2 +1,2 @@
 heroku-postgresql:dev
-memcache:5mb
+memcachier:dev

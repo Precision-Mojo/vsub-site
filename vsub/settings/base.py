@@ -140,6 +140,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 ## Middleware configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
+    'htmlmin.middleware.HtmlMinifyMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

@@ -247,6 +247,16 @@ PIPELINE_JS = {
     }
 }
 
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-css-compressor
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CssminCompressor'
+
+# See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-js-compressor
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+
+# See: http://django-pipeline.readthedocs.org/en/latest/compilers.html#compilers
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.less.LessCompiler',
+)
 # TODO: Strip off the /usr/bin/env portion of the value provided by
 # django-pipeline if env isn't on the path.
 #PIPELINE_LESS_BINARY = 'lessc'

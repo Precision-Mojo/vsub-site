@@ -2,6 +2,7 @@
 
 from memcacheify import memcacheify
 from postgresify import postgresify
+from boto.s3.connection import ProtocolIndependentOrdinaryCallingFormat
 
 from base import *
 
@@ -46,3 +47,30 @@ CACHES = memcacheify()
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Use the value set in the Heroku configuration.
 SECRET_KEY = os.environ.get('SECRET_KEY', SECRET_KEY)
+
+
+## django-storages and AWS configuration
+# See: http://django-storages.readthedocs.org/en/latest/index.html
+# See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings
+
+INSTALLED_APPS += (
+    'storages',
+)
+
+# The following values should be set via `heroku config'.
+# Values are based on the ones found here:
+# http://balzerg.blogspot.com/2012/09/staticfiles-on-heroku-with-django.html
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_S3_CALLING_FORMAT = ProtocolIndependentOrdinaryCallingFormat()
+AWS_QUERYSTRING_AUTH = False
+
+
+## Static files configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+# Serve static content out of S3.
+STATIC_URL = '//s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+STATICFILES_STORAGE = '%s.storage.S3PipelineStorage' % SITE_NAME

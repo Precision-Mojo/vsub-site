@@ -79,7 +79,7 @@ MEDIA_URL = '/media/'
 # NOTE: We place this path at the our *site* root, not the project root. This
 # allows us to run collectstatic during development without worrying about
 # overwriting static files in app-relative static/ directories.
-STATIC_ROOT = project_path('static/')
+STATIC_ROOT = project_path('static_collected/')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'

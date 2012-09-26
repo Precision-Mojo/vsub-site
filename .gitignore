@@ -7,6 +7,6 @@ venv
 # Development database.
 db.sqlite
 
-# Ignore only the top-level static/ directory, it contains collected static
-# files.
-/static/
+# Ignore the top-level static_collected/ directory, it contains collected and
+# processed static files.
+/static_collected/

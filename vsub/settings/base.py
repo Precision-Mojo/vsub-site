@@ -7,25 +7,25 @@ import os
 import sys
 
 ## Path configuration
-# Absolute path to our project directory.
-# NOTE: Use dirname() twice as the settings file is two levels deep.
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Create an absolute path from a path relative to the project root.
-project_path = lambda path: os.path.normpath(os.path.join(PROJECT_ROOT, path))
-
 # Absolute path to our site directory.
-SITE_ROOT = os.path.dirname(PROJECT_ROOT)
+# NOTE: Use dirname() twice as the settings file is two levels deep.
+SITE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Create an absolute path from a path relative to the site root.
 site_path = lambda path: os.path.normpath(os.path.join(SITE_ROOT, path))
 
 # Name of the site.
-SITE_NAME = os.path.basename(PROJECT_ROOT)
+SITE_NAME = os.path.basename(SITE_ROOT)
 
-# Add our project root to the pythonpath so that we can refer to project
+# Absolute path to our project directory.
+PROJECT_ROOT = os.path.dirname(SITE_ROOT)
+
+# Create an absolute path from a path relative to the project root.
+project_path = lambda path: os.path.normpath(os.path.join(PROJECT_ROOT, path))
+
+# Add our site root to the pythonpath so that we can refer to project
 # modules without having to use the project's name.
-sys.path.append(PROJECT_ROOT)
+sys.path.append(SITE_ROOT)
 
 
 ## Debug configuration
@@ -68,7 +68,7 @@ USE_TZ = True
 
 ## Media configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = project_path('media/')
+MEDIA_ROOT = site_path('media/')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -79,7 +79,7 @@ MEDIA_URL = '/media/'
 # NOTE: We place this path at the our *site* root, not the project root. This
 # allows us to run collectstatic during development without worrying about
 # overwriting static files in app-relative static/ directories.
-STATIC_ROOT = site_path('static/')
+STATIC_ROOT = project_path('static/')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
@@ -120,7 +120,7 @@ else:
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
-    project_path('templates/')
+    site_path('templates/')
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors

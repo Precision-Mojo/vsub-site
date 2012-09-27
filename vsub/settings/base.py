@@ -165,7 +165,15 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    }
+    },
+    'staticfiles': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(PROJECT_ROOT, 'static_cache'),
+        'TIMEOUT': 100 * 365 * 24 * 60 * 60,
+        'OPTIONS': {
+            'MAX_ENTRIES': 100 * 1000
+        },
+    },
 }
 
 

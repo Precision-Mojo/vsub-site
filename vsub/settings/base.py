@@ -173,11 +173,6 @@ INSTALLED_APPS = (
     # See: https://docs.djangoproject.com/en/dev/ref/contrib/humanize/
     'django.contrib.humanize',
 
-    # See: https://docs.djangoproject.com/en/dev/ref/contrib/admin/
-    'django.contrib.admin',
-    # https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/
-    'django.contrib.admindocs',
-
     # Third-party apps
     'pipeline',
 

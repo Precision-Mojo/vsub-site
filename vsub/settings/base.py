@@ -281,4 +281,7 @@ PIPELINE_COMPILERS = (
 
 ## django-htmlmin configuration
 # See: http://pypi.python.org/pypi/django-htmlmin
+# TODO: Disable HTML minifying because it breaks the IE-specific code at the
+# top of base.html.
+HTML_MINIFY = False
 KEEP_COMMENTS_ON_MINIFYING = True

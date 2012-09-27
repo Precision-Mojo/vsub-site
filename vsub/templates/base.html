@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load compressed i18n %}
+{% load google_analytics %}
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
@@ -11,6 +12,7 @@
   <meta name="viewport" content="width=device-width">
   {% compressed_css 'standard' %}
   <script src="{{ STATIC_URL }}js/lib/modernizr-2.6.2.min.js"></script>
+  {% google_analytics %}
 </head>
 <body>
   <div class="container">

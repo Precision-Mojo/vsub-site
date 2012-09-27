@@ -288,3 +288,11 @@ PIPELINE_COMPILERS = (
 # top of base.html.
 HTML_MINIFY = False
 KEEP_COMMENTS_ON_MINIFYING = True
+
+
+## django-analytical configuration
+# See: http://packages.python.org/django-analytical/services/google_analytics.html
+# NOTE: This value should be customizer per site. Default to the PM Rollup
+# tracking ID.
+GOOGLE_ANALYTICS_PROPERTY_ID = os.environ.get('GOOGLE_ANALYTICS_TRACKING_ID', 'UA-35095844-1')
+GOOGLE_ANALYTICS_TRACKING_STYLE = 3  # google_analytics.TRACK_MULTIPLE_DOMAINS

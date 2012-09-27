@@ -277,3 +277,8 @@ PIPELINE_COMPILERS = (
 # TODO: Strip off the /usr/bin/env portion of the value provided by
 # django-pipeline if env isn't on the path.
 #PIPELINE_LESS_BINARY = 'lessc'
+
+
+## django-htmlmin configuration
+# See: http://pypi.python.org/pypi/django-htmlmin
+KEEP_COMMENTS_ON_MINIFYING = True

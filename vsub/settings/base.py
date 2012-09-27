@@ -134,6 +134,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    '%s.context_processors.analytical_domain' % SITE_NAME,
 )
 
 

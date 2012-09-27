@@ -40,7 +40,9 @@ DATABASES = postgresify()
 
 ## Cache configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-CACHES = memcacheify()
+if CACHES is None:
+    CACHES = dict()
+CACHES.update(memcacheify())
 
 
 ## Secret key configuration

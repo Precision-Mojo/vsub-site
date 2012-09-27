@@ -1,1 +1,2 @@
 -r base.txt
+s3cmd==1.1.0-beta3

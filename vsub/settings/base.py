@@ -211,7 +211,9 @@ LOGGING = {
 
 ## django-pipeline configuration
 # See: http://django-pipeline.readthedocs.org/en/latest/configuration.html
-PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'
+# TODO: This uses a workaround for PipelineFinderStorage for running on
+# Windows.
+PIPELINE_STORAGE = '%s.settings.pipeline_helpers.PipelineFinderStorageCorrected' % SITE_NAME
 
 # See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#specifying-files
 PIPELINE_CSS = {

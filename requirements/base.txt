@@ -7,3 +7,4 @@ django-pipeline==1.2.17
 cssmin==0.1.4
 jsmin==2.0.2
 django-htmlmin==0.5.2
+django-analytical==0.13.0

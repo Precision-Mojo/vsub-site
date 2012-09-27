@@ -191,7 +191,10 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
 
     # Third-party apps
+    # django-pipeline
     'pipeline',
+    # django-analytical,
+    'analytical',
 
     # Project libraries
     '%s' % SITE_NAME,

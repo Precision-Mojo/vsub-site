@@ -229,6 +229,7 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'standard': {
         'source_filenames': (
+            'js/bootstrap-affix.js'
             'js/bootstrap-alert.js',
             'js/bootstrap-button.js',
             'js/bootstrap-carousel.js',

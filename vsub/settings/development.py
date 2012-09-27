@@ -21,8 +21,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Point to a local sqlite3 instance by default.
-    'default': dj_database_url.config(default='sqlite:///%s'
-        % project_path('db.sqlite'))
+    'default': dj_database_url.config(default='sqlite:///%s' % project_path('db.sqlite'))
 }
 
 
@@ -33,4 +32,11 @@ INSTALLED_APPS += (
     'django.contrib.admin',
     # https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/
     'django.contrib.admindocs',
+)
+
+
+## Internal IPs configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#internal-ips
+INTERNAL_IPS = (
+    '127.0.0.1',
 )

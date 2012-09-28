@@ -1,5 +1,10 @@
 Django==1.4.1
 distribute==0.6.28
+ssh==1.7.14
+pycrypto==2.6
+Fabric==1.4.3
+BeautifulSoup==3.2.1
+argparse==1.2.1
 dj-database-url==0.2.1
 pyflakes==0.5.0
 wsgiref==0.1.2

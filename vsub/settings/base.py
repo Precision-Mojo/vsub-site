@@ -196,6 +196,8 @@ INSTALLED_APPS = (
     'pipeline',
     # django-analytical,
     'analytical',
+    # South
+    'south',
 
     # Project libraries
     '%s' % SITE_NAME,

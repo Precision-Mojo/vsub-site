@@ -243,9 +243,6 @@ PIPELINE_CSS = {
             'css/bootstrap.css',
         ),
         'output_filename': 'css/s.min.css',
-        'extra_context': {
-            'media': 'screen,projection',
-        },
     },
     'responsive': {
         'source_filenames': (
@@ -255,9 +252,6 @@ PIPELINE_CSS = {
             'css/bootstrap-responsive.css',
         ),
         'output_filename': 'css/r.min.css',
-        'extra_context': {
-            'media': 'screen,projection',
-        },
     },
 }
 

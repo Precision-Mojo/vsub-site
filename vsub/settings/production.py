@@ -51,6 +51,14 @@ CACHES.update(memcacheify())
 SECRET_KEY = os.environ.get('SECRET_KEY', SECRET_KEY)
 
 
+## Gunicorn configuration
+# See: http://gunicorn.org/run.html
+# See: https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/gunicorn/
+INSTALLED_APPS += (
+    'gunicorn',
+)
+
+
 ## django-storages and AWS configuration
 # See: http://django-storages.readthedocs.org/en/latest/index.html
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings

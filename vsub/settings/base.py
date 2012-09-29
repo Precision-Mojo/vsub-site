@@ -5,6 +5,7 @@
 
 import os
 import sys
+from django.contrib.messages import constants as messages
 
 ## Path configuration
 # Absolute path to our site directory.
@@ -224,6 +225,19 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+
+## Messages configuration
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/messages/#message-tags
+# Setup tags to use Twitter Bootstrap alert styles (from
+# https://github.com/estebistec/bootstrap-pipelined)
+MESSAGE_TAGS = {
+    messages.DEBUG: '',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: '',
+    messages.ERROR: 'alert-error',
 }
 
 

@@ -32,7 +32,7 @@
       <section>
         {% for message in messages %}
           <div class="alert{% if message.tags %} {{ message.tags }}{% endif %}">
-            <button class="close" data-dismiss="alert">&times;</button>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ message }}
           </div>
         {% endfor %}

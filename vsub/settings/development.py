@@ -25,6 +25,13 @@ DATABASES = {
 }
 
 
+## Middleware configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
+MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+
 ## Installed app configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS += (
@@ -32,6 +39,9 @@ INSTALLED_APPS += (
     'django.contrib.admin',
     # https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/
     'django.contrib.admindocs',
+
+    # django-debug-toolbar
+    'debug_toolbar',
 )
 
 

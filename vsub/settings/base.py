@@ -237,12 +237,24 @@ PIPELINE_STORAGE = '%s.settings.pipeline_helpers.PipelineFinderStorageCorrected'
 PIPELINE_CSS = {
     'standard': {
         'source_filenames': (
-            # TODO: Using less requires that node and lessc are set up on the
-            # server.
+            # TODO: Use the checked-in .css until django-pipeline places
+            # compiled output into the STATIC_ROOT directory.
             #'less/bootstrap.less',
             'css/bootstrap.css',
         ),
         'output_filename': 'css/s.min.css',
+        'extra_context': {
+            'media': 'screen,projection',
+        },
+    },
+    'responsive': {
+        'source_filenames': (
+            # TODO: Use the checked-in .css until django-pipeline places
+            # compiled output into the STATIC_ROOT directory.
+            #'less/responsive.less',
+            'css/bootstrap-responsive.css',
+        ),
+        'output_filename': 'css/r.min.css',
         'extra_context': {
             'media': 'screen,projection',
         },

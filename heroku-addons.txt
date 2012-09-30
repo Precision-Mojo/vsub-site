@@ -1,3 +1,5 @@
 heroku-postgresql:dev
 memcachier:dev
 newrelic:standard
+pgbackups:auto-month
+sentry:developer

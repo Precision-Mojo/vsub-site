@@ -1,5 +1,7 @@
 """Settings used in the production environment."""
 
+import os
+
 from memcacheify import memcacheify
 from postgresify import postgresify
 from boto.s3.connection import ProtocolIndependentOrdinaryCallingFormat
@@ -84,3 +86,66 @@ STATIC_URL = '//s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATICFILES_STORAGE = '%s.storage.S3PipelineStorage' % SITE_NAME
+
+
+## Raven / Sentry configuration
+# See: https://www.getsentry.com/docs/python/django/
+# See: http://raven.readthedocs.org/en/latest/config/django.html
+INSTALLED_APPS += (
+    'raven.contrib.django',
+)
+
+SENTRY_DSN = os.environ.get('SENTRY_DSN')
+
+SENTRY_LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'WARNING',
+        'handlers': ['sentry'],
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'raven.contrib.django.handlers.SentryHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+    },
+}
+
+# Augment the existing LOGGING configuration.
+if LOGGING is None:
+    LOGGING = dict()
+LOGGING.update(SENTRY_LOGGING)
+
+# The documenation recommend placing Sentry middleware as high as possible.
+MIDDLEWARE_CLASSES = (
+    'raven.contrib.django.middleware.SentryResponseErrorIdMiddleware',
+    'raven.contrib.django.middleware.SentryLogMiddleware',
+) + MIDDLEWARE_CLASSES

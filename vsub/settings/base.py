@@ -313,4 +313,10 @@ KEEP_COMMENTS_ON_MINIFYING = True
 # NOTE: This value should be customizer per site. Default to the PM Rollup
 # tracking ID.
 GOOGLE_ANALYTICS_PROPERTY_ID = os.environ.get('GOOGLE_ANALYTICS_TRACKING_ID', 'UA-35095844-1')
-GOOGLE_ANALYTICS_TRACKING_STYLE = 3  # google_analytics.TRACK_MULTIPLE_DOMAINS
+GOOGLE_ANALYTICS_TRACKING_STYLE = 3  # google_analytics.TRACK_MULTIPLE_DOMAINS'
+
+# See: http://packages.python.org/django-analytical/services/gauges.html
+# NOTE: This uses the www.precision-mojo.com site ID as the default.
+# TODO: Check for the existence of these in the template, instead of providing
+# defaults.
+GAUGES_SITE_ID = os.environ.get('GAUGES_SITE_ID', '506e9774f5a1f511f900001d')

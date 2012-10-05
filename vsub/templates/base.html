@@ -2,6 +2,7 @@
 {% load compressed i18n %}
 {% load google_analytics %}
 {% load gauges %}
+{% load mixpanel %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="utf-8">
@@ -25,6 +26,7 @@
   <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}ico/apple-touch-icon-57-precomposed.png">
   {% google_analytics %}
   {% gauges %}
+  {% mixpanel %}
 </head>
 <body>
   <div class="navbar navbar-static-top">

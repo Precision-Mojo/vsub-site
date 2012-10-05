@@ -320,3 +320,6 @@ GOOGLE_ANALYTICS_TRACKING_STYLE = 3  # google_analytics.TRACK_MULTIPLE_DOMAINS'
 # TODO: Check for the existence of these in the template, instead of providing
 # defaults.
 GAUGES_SITE_ID = os.environ.get('GAUGES_SITE_ID', '506e9774f5a1f511f900001d')
+
+# See: http://packages.python.org/django-analytical/services/mixpanel.html
+MIXPANEL_API_TOKEN = os.environ.get('MIXPANEL_API_TOKEN')

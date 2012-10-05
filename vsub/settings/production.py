@@ -88,6 +88,17 @@ STATIC_URL = '//s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 STATICFILES_STORAGE = '%s.storage.S3PipelineStorage' % SITE_NAME
 
 
+## Template configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+if not DEBUG:
+    TEMPLATE_LOADERS = (
+        ('django.template.loaders.cached.Loader', (
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        )),
+    )
+
+
 ## Raven / Sentry configuration
 # See: https://www.getsentry.com/docs/python/django/
 # See: http://raven.readthedocs.org/en/latest/config/django.html

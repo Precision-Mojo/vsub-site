@@ -105,19 +105,10 @@ SECRET_KEY = '4=py*2g1gl=cgjqcb4v*gr^&amp;5nxt2@d%b+!#l(2eeb#sa_0yxq'
 
 ## Template configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-# TODO: Use another setting instead of DEBUG.
-if not DEBUG:
-    TEMPLATE_LOADERS = (
-        ('django.template.loaders.cached.Loader', (
-            'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader',
-        )),
-    )
-else:
-    TEMPLATE_LOADERS = (
-        'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader',
-    )
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (

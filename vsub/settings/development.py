@@ -32,6 +32,19 @@ MIDDLEWARE_CLASSES += (
 )
 
 
+## Cache configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
+CACHES_DEV = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    },
+}
+
+if CACHES is None:
+    CACHES = dict()
+CACHES.update(CACHES_DEV)
+
+
 ## Installed app configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS += (

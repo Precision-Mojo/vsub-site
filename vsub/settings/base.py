@@ -192,6 +192,8 @@ INSTALLED_APPS = (
     'analytical',
     # South
     'south',
+    # django-robots
+    'robots',
 
     # Project libraries
     '%s' % SITE_NAME,

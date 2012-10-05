@@ -14,3 +14,4 @@ jsmin==2.0.2
 django-htmlmin==0.5.2
 django-analytical==0.13.0
 South==0.7.6
+django-robots==0.8.1

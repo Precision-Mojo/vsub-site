@@ -12,6 +12,8 @@ django-pipeline==1.2.17
 cssmin==0.1.4
 jsmin==2.0.2
 django-htmlmin==0.5.2
-django-analytical==0.13.0
+# Switch back to package after Mixpanel updates have been released.
+#django-analytical==0.13.0
+git+git://github.com/jcassee/django-analytical.git@9bef77b3b4d60f0821469abfd30a6006ba00a15e
 South==0.7.6
 django-robots==0.8.1

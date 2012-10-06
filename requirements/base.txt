@@ -1,4 +1,5 @@
 Django==1.4.1
+psycopg2==2.4.5
 distribute==0.6.28
 ssh==1.7.14
 pycrypto==2.6

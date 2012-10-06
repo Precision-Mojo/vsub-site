@@ -1,6 +1,5 @@
 -r base.txt
 boto==2.6.0
-psycopg2==2.4.5
 gevent==0.13.8
 gunicorn==0.14.6
 django-heroku-postgresify==0.2

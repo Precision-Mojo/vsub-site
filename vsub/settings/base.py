@@ -286,10 +286,10 @@ PIPELINE_JS = {
 }
 
 # See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-css-compressor
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CssminCompressor'
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
 
 # See: http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-js-compressor
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
 
 # See: http://django-pipeline.readthedocs.org/en/latest/compilers.html#compilers
 PIPELINE_COMPILERS = (
@@ -298,6 +298,7 @@ PIPELINE_COMPILERS = (
 # TODO: Strip off the /usr/bin/env portion of the value provided by
 # django-pipeline if env isn't on the path.
 #PIPELINE_LESS_BINARY = 'lessc'
+PIPELINE_YUI_BINARY = 'yuicompressor'
 
 
 ## django-htmlmin configuration

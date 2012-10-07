@@ -1,5 +1,5 @@
-[submodule "vsub/libs/bootstrap/static"]
-	path = vsub/libs/bootstrap/static
+[submodule "vsub_site/libs/bootstrap/static"]
+	path = vsub_site/libs/bootstrap/static
 	url = git://github.com/twitter/bootstrap.git
 [submodule "fabfile"]
 	path = fabfile

@@ -18,10 +18,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 ## Database configuration
+try:
+    import psycopg2
+    DEFAULT_DATABASE_URL = 'postgres://%s@localhost/%s' % (SITE_NAME, SITE_NAME)
+except ImportError:
+    # Point to a local sqlite3 instance by default.
+    DEFAULT_DATABASE_URL = 'sqlite:///%s' % project_path('db.sqlite')
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    # Point to a local sqlite3 instance by default.
-    'default': dj_database_url.config(default='sqlite:///%s' % project_path('db.sqlite'))
+    'default': dj_database_url.config(default=DEFAULT_DATABASE_URL)
 }
 
 

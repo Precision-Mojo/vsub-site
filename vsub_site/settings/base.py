@@ -5,7 +5,10 @@
 
 import os
 import sys
+from datetime import timedelta
+
 from django.contrib.messages import constants as messages
+from djcelery import setup_loader
 
 ## Path configuration
 # Absolute path to our site directory.
@@ -199,6 +202,8 @@ INSTALLED_APPS = (
     'south',
     # django-robots
     'robots',
+    # django-celery
+    'djcelery',
 
     # Project libraries
     '%s' % SITE_NAME,
@@ -324,3 +329,11 @@ GAUGES_SITE_ID = os.environ.get('GAUGES_SITE_ID', '')
 
 # See: http://packages.python.org/django-analytical/services/mixpanel.html
 MIXPANEL_API_TOKEN = os.environ.get('MIXPANEL_API_TOKEN', '')
+
+
+## django-celery / celery configuration
+# See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
+CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
+
+# See: http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html
+setup_loader()

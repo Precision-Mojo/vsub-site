@@ -16,3 +16,10 @@ django-htmlmin==0.5.2
 git+git://github.com/jcassee/django-analytical.git@9bef77b3b4d60f0821469abfd30a6006ba00a15e
 South==0.7.6
 django-robots==0.8.1
+python-dateutil==1.5
+amqplib==1.0.2
+anyjson==0.3.3
+billiard==2.7.3.17
+kombu==2.4.7
+celery==3.0.11
+django-celery==3.0.10

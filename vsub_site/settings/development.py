@@ -66,6 +66,11 @@ INTERNAL_IPS = (
 )
 
 
+## django-celery / celery configuration
+# See: http://docs.celeryproject.org/en/latest/configuration.html#celery-always-eager
+CELERY_ALWAYS_EAGER = True
+
+
 ## django-debug-toolbar configuration
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar
 DEBUG_TOOLBAR_CONFIG = {

@@ -54,11 +54,6 @@ CACHES.update(CACHES_DEV)
 ## Installed app configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS += (
-    # See: https://docs.djangoproject.com/en/dev/ref/contrib/admin/
-    'django.contrib.admin',
-    # https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/
-    'django.contrib.admindocs',
-
     # django-debug-toolbar
     'debug_toolbar',
 )

@@ -13,6 +13,3 @@ bootstrap-*.js
 
 # We do the same thing for boostrap.css - it's also minified.
 bootstrap.css
-
-# Ignore static files used in the admin app.
-admin

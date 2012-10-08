@@ -10,3 +10,6 @@ db.sqlite
 # Ignore the top-level static_collected/ directory, it contains collected and
 # processed static files.
 /static_collected/
+
+# Local configuration variables (used by foreman and heroku-pg-transfer).
+.env

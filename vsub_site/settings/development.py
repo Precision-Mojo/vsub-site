@@ -69,3 +69,10 @@ INSTALLED_APPS += (
 INTERNAL_IPS = (
     '127.0.0.1',
 )
+
+
+## django-debug-toolbar configuration
+# See: https://github.com/django-debug-toolbar/django-debug-toolbar
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}

@@ -26,3 +26,7 @@ django-celery==3.0.10
 django-appconf==0.5
 pytz==2012d
 git+git://github.com/pinax/django-user-accounts.git@6be4ec90d42184ec13d1e367540bb98a65b27a37
+httplib2==0.7.6
+oauth2==1.5.211
+python-openid==2.2.5
+django-social-auth==0.7.6

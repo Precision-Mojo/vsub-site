@@ -342,3 +342,9 @@ CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
 
 # See: http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html
 setup_loader()
+
+
+## django-user-accounts configuration
+# See: http://django-user-accounts.readthedocs.org/en/latest/usage.html
+ACCOUNT_EMAIL_UNIQUE = True
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True

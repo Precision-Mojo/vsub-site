@@ -216,6 +216,8 @@ INSTALLED_APPS = (
     'djcelery',
     # django-user-accounts
     'account',
+    # django-social-auth
+    'social_auth',
 
     # Project libraries
     '%s' % SITE_NAME,

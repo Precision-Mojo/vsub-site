@@ -50,6 +50,13 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
+## Authentication backends configuration
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.auth_backends.EmailAuthenticationBackend',
+)
+
 ## Timezone and localization configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = 'America/Phoenix'

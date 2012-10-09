@@ -66,6 +66,40 @@ INTERNAL_IPS = (
 )
 
 
+DEBUG_LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['console'],
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+    },
+}
+
+# Augment the existing LOGGING configuration.
+if LOGGING is None:
+    LOGGING = dict()
+LOGGING.update(DEBUG_LOGGING)
+
+
 ## django-celery / celery configuration
 # See: http://docs.celeryproject.org/en/latest/configuration.html#celery-always-eager
 CELERY_ALWAYS_EAGER = True

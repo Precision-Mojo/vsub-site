@@ -218,6 +218,8 @@ INSTALLED_APPS = (
     'account',
     # django-social-auth
     'social_auth',
+    # django-bootstrap-toolkit
+    'bootstrap_toolkit',
 
     # Project libraries
     '%s' % SITE_NAME,

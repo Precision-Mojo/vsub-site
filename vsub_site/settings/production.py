@@ -87,6 +87,10 @@ STATIC_URL = '//s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATICFILES_STORAGE = '%s.storage.S3PipelineStorage' % SITE_NAME
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#admin-media-prefix
+# Note: This setting is still used in Django 1.4.
+ADMIN_MEDIA_PREFIX = STATIC_URL + '/admin/'
+
 
 ## Template configuration
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders

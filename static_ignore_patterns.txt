@@ -7,9 +7,3 @@ package.json
 tests
 docs
 *.less
-
-# Bootstrap Javascript is minified, we don't need the source.
-bootstrap-*.js
-
-# We do the same thing for boostrap.css - it's also minified.
-bootstrap.css

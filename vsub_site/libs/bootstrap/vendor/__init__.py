@@ -5,7 +5,7 @@ submodules = {
         'destination': '../static/bootstrap',
     },
     'Font-Awesome': {
-        'tag': '2.0.0',
+        'tag': 'master',
         'sources': ['font', 'less'],
         'destination': '../static/bootstrap',
     },

@@ -280,7 +280,7 @@ PIPELINE_CSS = {
             # TODO: Use the checked-in .css until django-pipeline places
             # compiled output into the STATIC_ROOT directory.
             #'less/bootstrap.less',
-            'css/bootstrap.css',
+            'bootstrap/css/bootstrap.css',
         ),
         'output_filename': 'css/s.min.css',
     },
@@ -289,7 +289,7 @@ PIPELINE_CSS = {
             # TODO: Use the checked-in .css until django-pipeline places
             # compiled output into the STATIC_ROOT directory.
             #'less/responsive.less',
-            'css/bootstrap-responsive.css',
+            'bootstrap/css/bootstrap-responsive.css',
         ),
         'output_filename': 'css/r.min.css',
     },

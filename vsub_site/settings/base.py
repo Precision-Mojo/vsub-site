@@ -298,19 +298,19 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'standard': {
         'source_filenames': (
-            'js/bootstrap-affix.js'
-            'js/bootstrap-alert.js',
-            'js/bootstrap-button.js',
-            'js/bootstrap-carousel.js',
-            'js/bootstrap-collapse.js',
-            'js/bootstrap-dropdown.js',
-            'js/bootstrap-modal.js',
-            'js/bootstrap-scrollspy.js',
-            'js/bootstrap-tab.js',
-            'js/bootstrap-tooltip.js',
-            'js/bootstrap-popover.js',
-            'js/bootstrap-transition.js',
-            'js/bootstrap-typeahead.js',
+            'bootstrap/js/bootstrap-affix.js',
+            'bootstrap/js/bootstrap-alert.js',
+            'bootstrap/js/bootstrap-button.js',
+            'bootstrap/js/bootstrap-carousel.js',
+            'bootstrap/js/bootstrap-collapse.js',
+            'bootstrap/js/bootstrap-dropdown.js',
+            'bootstrap/js/bootstrap-modal.js',
+            'bootstrap/js/bootstrap-scrollspy.js',
+            'bootstrap/js/bootstrap-tab.js',
+            'bootstrap/js/bootstrap-tooltip.js',
+            'bootstrap/js/bootstrap-popover.js',
+            'bootstrap/js/bootstrap-transition.js',
+            'bootstrap/js/bootstrap-typeahead.js',
         ),
         'output_filename': 'js/s.min.js',
     }

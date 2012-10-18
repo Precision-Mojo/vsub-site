@@ -1,4 +1,4 @@
-Django==1.4.1
+Django==1.4.2
 psycopg2==2.4.5
 distribute==0.6.28
 ssh==1.7.14
@@ -28,5 +28,5 @@ git+git://github.com/pinax/django-user-accounts.git@6be4ec90d42184ec13d1e367540b
 httplib2==0.7.6
 oauth2==1.5.211
 python-openid==2.2.5
-django-social-auth==0.7.6
+django-social-auth==0.7.7
 django-bootstrap-toolkit==2.5.9

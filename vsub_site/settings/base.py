@@ -191,10 +191,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # This app contains templates for django.contrib.admin, so it must precede
-    # it.
-    # django-bootstrap-admin-templates
-    'bootstrap_admin_templates',
+    # This app contains templates for django.contrib.admin, so it must precede it.
+    # django-admin-bootstrapped
+    'django_admin_bootstrapped',
 
     # See: https://docs.djangoproject.com/en/dev/ref/contrib/admin/
     'django.contrib.admin',

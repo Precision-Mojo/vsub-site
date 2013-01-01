@@ -1,4 +1,3 @@
 -r base.txt
 s3cmd==1.1.0-beta3
 django-debug-toolbar==0.9.4
--e git+git@github.com:Precision-Mojo/django-bootstrap-admin-templates.git@ee985c1b21a7205cc950001f3473677122fde571#egg=django_bootstrap_admin_templates-dev

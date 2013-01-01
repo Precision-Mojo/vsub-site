@@ -54,7 +54,6 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'account.auth_backends.EmailAuthenticationBackend',
 )
 
 ## Timezone and localization configuration
@@ -136,7 +135,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
-    'account.context_processors.account',
     '%s.context_processors.analytical_domain' % SITE_NAME,
 )
 
@@ -153,8 +151,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'account.middleware.LocaleMiddleware',
-    'account.middleware.TimezoneMiddleware',
 )
 
 
@@ -356,9 +352,3 @@ CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
 
 # See: http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html
 setup_loader()
-
-
-## django-user-accounts configuration
-# See: http://django-user-accounts.readthedocs.org/en/latest/usage.html
-ACCOUNT_EMAIL_UNIQUE = True
-ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True

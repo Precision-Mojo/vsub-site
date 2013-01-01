@@ -219,8 +219,6 @@ INSTALLED_APPS = (
     'robots',
     # django-celery
     'djcelery',
-    # django-user-accounts
-    'account',
     # django-social-auth
     'social_auth',
     # django-bootstrap-toolkit

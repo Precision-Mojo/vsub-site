@@ -218,6 +218,8 @@ INSTALLED_APPS = (
     'social_auth',
     # django-bootstrap-toolkit
     'bootstrap_toolkit',
+    # django-annoying
+    'annoying',
 
     # Project libraries
     '%s' % SITE_NAME,

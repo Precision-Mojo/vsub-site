@@ -1,10 +1,10 @@
 -r base.txt
 boto==2.6.0
 django-heroku-memcacheify==0.3
-django-heroku-postgresify==0.2
+django-heroku-postgresify==0.3
 django-storages==1.1.5
 gevent==0.13.8
 greenlet==0.4.0
-gunicorn==0.14.6
-newrelic==1.5.0.103
-raven==2.0.6
+gunicorn==0.16.1
+newrelic==1.9.0.21
+raven==2.0.12.2

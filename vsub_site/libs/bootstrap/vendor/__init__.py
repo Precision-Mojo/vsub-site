@@ -1,6 +1,6 @@
 submodules = {
     'bootstrap': {
-        'tag': 'v2.1.1',
+        'tag': 'v2.2.2',
         'sources': ['img', 'js', 'less'],
         'destination': '../static/bootstrap',
     },
